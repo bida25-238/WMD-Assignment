@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about the Qatar Airways Fleet Wallpaper website and its connection to the aviation fan community.">
-  <title>About — Qatar Airways Fleet Wallpapers</title>
+  <title>Fleet Gallery — Qatar Airways Fleet Wallpapers</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -16,16 +15,16 @@
   <nav class="navbar navbar-expand-lg site-nav" id="mainNav">
     <div class="container-fluid px-4">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.jpeg" alt="Qatar Airways Lovers Community Logo" class="logo-img" onerror="this.style.display='none'">
+        <img src="assets/images/logo.jpeg" alt="Qatar Airways Lovers Logo" class="logo-img" onerror="this.style.display='none'">
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="fleet.html">Fleet Gallery</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="fleet gallery.html">Fleet Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
         </ul>
         <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener noreferrer" class="ig-btn">
@@ -38,82 +37,101 @@
 
 <main>
 
-  <!-- PAGE BANNER -->
   <div class="page-banner">
     <div class="container">
-      <h1 class="fade-up">About The Website</h1>
-      <p class="fade-up delay-1">Learn more about the purpose of the Qatar Airways Fleet Wallpaper website and its connection to the aviation fan community.</p>
+      <div class="row align-items-center gy-3">
+        <div class="col-lg-6">
+          <h1 class="fade-up">Fleet Gallery</h1>
+          <p class="fade-up delay-1">Browse wallpapers by aircraft type across the Qatar Airways fleet.</p>
+        </div>
+        <div class="col-lg-6 fade-up delay-1">
+          <div class="search-wrap">
+            <input type="search" id="searchInput" class="search-input" placeholder="Search Aircraft" aria-label="Search aircraft">
+            <select id="filterSelect" class="filter-select" aria-label="Filter by manufacturer">
+              <option value="all">Airbus / Boeing</option>
+              <option value="airbus">Airbus</option>
+              <option value="boeing">Boeing</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- WEBSITE PURPOSE -->
-  <section class="about-section" id="purpose">
+  <section class="gallery-section" id="fleet-cats">
     <div class="container">
-      <div class="row align-items-center gy-4">
-        <div class="col-lg-7 fade-up">
-          <h2 class="section-title">Website Purpose</h2>
-          <p style="color:var(--grey-text); line-height:1.8; margin-bottom:14px;">
-            This website was created to serve as a dedicated hub for fans of Qatar Airways to easily browse and download high-definition wallpapers of the airline's aircraft. The goal is to provide a structured and organized platform that goes beyond what is currently available through social media alone.
-          </p>
-          <p style="color:var(--grey-text); line-height:1.8;">
-            The website focuses on showcasing the full Qatar Airways fleet, from the short-haul Airbus A320 family to the iconic Boeing 777 and the flagship Airbus A350. Users can browse by aircraft type, preview wallpapers in high resolution, and go through a simulated download process designed specifically for academic demonstration purposes.
-          </p>
+      <h2 class="section-title text-center fade-up">Browse Fleet Categories</h2>
+      <div class="row g-4" id="aircraftGrid">
+
+        <div class="col-lg-3 col-md-4 col-6 fade-up">
+          <a href="aircraft.html?type=a320" class="aircraft-cat-card d-block" data-name="A320 Family" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="assets/images/a320.jpg" alt="A320 Family" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+            <span class="aircraft-cat-label">A320 Family</span>
+          </a>
         </div>
-        <div class="col-lg-5 fade-up delay-1">
-          <div class="about-img-box">
-            <img src="assets/images/about-purpose.jpg" alt="Qatar Airways aircraft on the tarmac" loading="lazy"
-              onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:260px\'><i class=\'fa fa-plane-arrival\'></i><span>Website Purpose</span></div>'">
-          </div>
+
+        <div class="col-lg-3 col-md-4 col-6 fade-up delay-1">
+          <a href="aircraft.html?type=a330" class="aircraft-cat-card d-block" data-name="Airbus A330" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="assets/images/a330.jpg" alt="Airbus A330" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+            <span class="aircraft-cat-label">Airbus A330</span>
+          </a>
         </div>
+
+        <div class="col-lg-3 col-md-4 col-6 fade-up delay-2">
+          <a href="aircraft.html?type=a350" class="aircraft-cat-card d-block" data-name="Airbus A350" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="assets/images/a350.jpg" alt="Airbus A350" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+            <span class="aircraft-cat-label">Airbus A350</span>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 fade-up delay-3">
+          <a href="aircraft.html?type=a380" class="aircraft-cat-card d-block" data-name="Airbus A380" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="assets/images/a380.jpg" alt="Airbus A380" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+            <span class="aircraft-cat-label">Airbus A380</span>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 fade-up">
+          <a href="aircraft.html?type=b737max" class="aircraft-cat-card d-block" data-name="Boeing 737 MAX" data-maker="boeing">
+            <div class="aircraft-cat-img"><img src="assets/images/b737max.jpg" alt="Boeing 737 MAX" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+            <span class="aircraft-cat-label">Boeing 737 MAX</span>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 fade-up delay-1">
+          <a href="aircraft.html?type=b777" class="aircraft-cat-card d-block" data-name="Boeing 777" data-maker="boeing">
+            <div class="aircraft-cat-img"><img src="assets/images/b777.jpg" alt="Boeing 777" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+            <span class="aircraft-cat-label">Boeing 777</span>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 fade-up delay-2">
+          <a href="aircraft.html?type=b787" class="aircraft-cat-card d-block" data-name="Boeing 787" data-maker="boeing">
+            <div class="aircraft-cat-img"><img src="assets/images/b787.jpg" alt="Boeing 787" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+            <span class="aircraft-cat-label">Boeing 787</span>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- COMMUNITY BACKGROUND -->
-  <section class="about-section" id="community">
+  <section class="gallery-section" style="padding-top:0">
     <div class="container">
-      <div class="row align-items-center gy-4 flex-lg-row-reverse">
-        <div class="col-lg-7 fade-up">
-          <h2 class="section-title">Community Background</h2>
-          <p style="color:var(--grey-text); line-height:1.8; margin-bottom:14px;">
-            This website was inspired by the <strong>qatarairwayslovers</strong> aviation fan community on Instagram. The community was built around a shared passion for Qatar Airways, its aircraft and the broader aviation world. Over time, the community grew into a dedicated space where aviation enthusiasts could share photography, updates and appreciation for one of the world's greatest airlines.
-          </p>
-          <p style="color:var(--grey-text); line-height:1.8;">
-            The idea behind this website is to take that community spirit and bring it into a more structured digital platform. Rather than relying purely on Instagram posts, users can now access a clean and organized gallery of wallpapers organized by the aircraft type they are interested in, making it easier to find and download the content they love.
-          </p>
-          <div class="mt-3">
-            <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener noreferrer" class="ig-btn">
-              <i class="fab fa-instagram"></i> Follow @qatarairwayslovers
-            </a>
+      <h2 class="section-title text-center fade-up">Explore More Aircraft</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-5 col-md-6 fade-up delay-1">
+          <div class="explore-card">
+            <p class="explore-label fw-semibold">Airbus Collection</p>
+            <div class="explore-card-img"><i class="fa fa-plane"></i></div>
+            <button class="explore-browse-btn" onclick="location.href='fleet.html?filter=airbus'">Browse Airbus</button>
           </div>
         </div>
-        <div class="col-lg-5 fade-up delay-1">
-          <div class="about-img-box">
-            <img src="assets/images/logo.jpeg" alt="Qatar Airways Lovers Aviation Community Logo" loading="lazy"
-              onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:260px\'><i class=\'fa fa-users\'></i><span>Community</span></div>'" style="object-fit:contain; padding:20px; background:#f5f5f5;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT THE CREATOR -->
-  <section class="about-section" id="creator">
-    <div class="container">
-      <div class="row align-items-center gy-4">
-        <div class="col-lg-7 fade-up">
-          <h2 class="section-title">About The Creator</h2>
-          <p style="color:var(--grey-text); line-height:1.8; margin-bottom:14px;">
-            This website was created by a first-year Business Intelligence and Data Analytics student at Botswana Accountancy College, as part of the Web and Multimedia Development module assignment. The creator has a personal interest in aviation and manages the qatarairwayslovers community on Instagram, which serves as the inspiration behind this project.
-          </p>
-          <p style="color:var(--grey-text); line-height:1.8;">
-            The project was an opportunity to combine academic learning in web development with a genuine passion for aviation content creation. The goal was to design and build a fully functional website that not only meets the technical requirements of the assignment but also serves a real purpose for the existing aviation fan community.
-          </p>
-        </div>
-        <div class="col-lg-5 fade-up delay-1">
-          <div class="about-img-box">
-            <img src="assets/images/about-creator.jpg" alt="Website creator" loading="lazy"
-              onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:260px\'><i class=\'fa fa-user\'></i><span>About The Creator</span></div>'">
+        <div class="col-lg-5 col-md-6 fade-up delay-2">
+          <div class="explore-card">
+            <p class="explore-label fw-semibold">Boeing Collection</p>
+            <div class="explore-card-img"><i class="fa fa-plane"></i></div>
+            <button class="explore-browse-btn" onclick="location.href='fleet.html?filter=boeing'">Browse Boeing</button>
           </div>
         </div>
       </div>
@@ -138,6 +156,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
