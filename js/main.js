@@ -213,7 +213,7 @@ if (filterSelect) {
 }
 
 /* ── HELPER: TOAST NOTIFICATION ────────────────────────────
-   Shows a toast div for 3 seconds then hides it.
+   Shows a toast div for 3 seconds then it hides it.
    ─────────────────────────────────────────────────────── */
 function showToast(id, message) {
   var toast = document.getElementById(id);
