@@ -9,6 +9,21 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .wp-rotate-card{border:1px solid var(--mid-grey);border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:var(--shadow);transition:transform var(--tr),box-shadow var(--tr)}
+    .wp-rotate-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .wp-rotate-img{position:relative;overflow:hidden;height:210px;background:var(--light-grey)}
+    .wp-rotate-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease}
+    .wp-rotate-img img.active{opacity:1}
+    .wp-rotate-overlay{position:absolute;inset:0;background:rgba(26,5,8,0.78);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--tr);z-index:2}
+    .wp-rotate-card:hover .wp-rotate-overlay{opacity:1}
+    .wp-rotate-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,5,8,.88),transparent);padding:28px 14px 10px;z-index:1}
+    .wp-rotate-label p{font-size:.82rem;color:rgba(255,255,255,.85);font-weight:500;margin:0}
+    .wp-rotate-label span{font-size:.7rem;color:var(--gold);letter-spacing:.05em}
+    .wp-dots{display:flex;gap:5px;justify-content:center;padding:10px 0 4px}
+    .wp-dot{width:6px;height:6px;border-radius:50%;background:var(--mid-grey);cursor:pointer;transition:background .3s,transform .3s}
+    .wp-dot.active{background:var(--maroon);transform:scale(1.3)}
+  </style>
 </head>
 <body>
 
@@ -16,9 +31,9 @@
   <nav class="navbar navbar-expand-lg site-nav" id="mainNav">
     <div class="container-fluid px-4">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.jpeg" alt="Qatar Airways Lovers Community Logo" class="logo-img" onerror="this.style.display='none'">
+        <img src="images/qr lovers logo/QR Lovers Community Logo.jpeg" alt="Qatar Airways Lovers Logo" class="logo-img" onerror="this.style.display='none'">
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
@@ -38,7 +53,7 @@
 
 <main>
 
-  <!-- ── HERO SECTION ── -->
+  <!-- HERO -->
   <section class="hero-section" id="hero">
     <div class="container">
       <div class="row align-items-center gy-5">
@@ -46,14 +61,17 @@
           <h1 class="hero-title">Qatar Airways<br>Fleet Wallpapers</h1>
           <p class="hero-sub">Browse and download HD wallpapers<br>featuring the full Qatar Airways fleet.</p>
           <div class="d-flex gap-3 flex-wrap mb-3">
-            <a href="fleet.html" class="btn-dark-pill">Browse Fleet</a>
+            <a href="fleet gallery.html" class="btn-dark-pill">Browse Fleet</a>
             <a href="about.html" class="btn-outline-pill">About The Community</a>
           </div>
-          <p class="hero-tagline"><em>Inspired by the qatarairwayslovers community on Instagram.</em></p>
+          <p class="hero-tagline">
+            <i class="fab fa-instagram"></i>
+            <em>Inspired by the qatarairwayslovers community on Instagram.</em>
+          </p>
         </div>
         <div class="col-lg-6 fade-up delay-1">
           <div class="hero-img-box">
-            <img src="assets/images/hero.jpg" alt="Qatar Airways aircraft in flight" width="600" height="360" loading="eager"
+            <img src="images/qr lovers logo/QR Lovers Community Logo.jpeg" alt="Qatar Airways aircraft in flight" width="600" height="360" loading="eager"
               onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:360px\'><i class=\'fa fa-plane\'></i><span>Hero Image</span></div>'">
           </div>
         </div>
@@ -61,7 +79,7 @@
     </div>
   </section>
 
-  <!-- ── FEATURED FLEET CATEGORIES ── -->
+  <!-- FEATURED FLEET CATEGORIES -->
   <section class="fleet-section" id="fleet">
     <div class="container">
       <h2 class="section-title text-center fade-up">Featured Fleet Categories</h2>
@@ -70,12 +88,12 @@
         <div class="col-lg-4 col-md-6 fade-up delay-1">
           <article class="fleet-card">
             <div class="fleet-card-img">
-              <img src="assets/images/a320.jpg" alt="Qatar Airways Airbus A320 Family" width="400" height="200" loading="lazy"
+              <img src="images/a320/During Taxi.jpeg" alt="Qatar Airways Airbus A320 Family" loading="lazy"
                 onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:200px\'><i class=\'fa fa-plane\'></i><span>A320 Family</span></div>'">
             </div>
             <div class="fleet-card-body">
               <h3 class="fleet-card-title">Airbus A320 Family</h3>
-              <a href="aircraft.html?type=a320" class="btn-dark-pill">View Wallpapers</a>
+              <a href="a320.html" class="btn-dark-pill">View Wallpapers</a>
             </div>
           </article>
         </div>
@@ -83,12 +101,12 @@
         <div class="col-lg-4 col-md-6 fade-up delay-2">
           <article class="fleet-card">
             <div class="fleet-card-img">
-              <img src="assets/images/a350.jpg" alt="Qatar Airways Airbus A350" width="400" height="200" loading="lazy"
+              <img src="images/a350/Stunning Takeoff.jpeg" alt="Qatar Airways Airbus A350" loading="lazy"
                 onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:200px\'><i class=\'fa fa-plane\'></i><span>Airbus A350</span></div>'">
             </div>
             <div class="fleet-card-body">
               <h3 class="fleet-card-title">Airbus A350</h3>
-              <a href="aircraft.html?type=a350" class="btn-dark-pill">View Wallpapers</a>
+              <a href="a350.html" class="btn-dark-pill">View Wallpapers</a>
             </div>
           </article>
         </div>
@@ -96,12 +114,12 @@
         <div class="col-lg-4 col-md-6 fade-up delay-3">
           <article class="fleet-card">
             <div class="fleet-card-img">
-              <img src="assets/images/b777.jpg" alt="Qatar Airways Boeing 777" width="400" height="200" loading="lazy"
+              <img src="images/b777/Parked At The Spot.jpg" alt="Qatar Airways Boeing 777" loading="lazy"
                 onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:200px\'><i class=\'fa fa-plane\'></i><span>Boeing 777</span></div>'">
             </div>
             <div class="fleet-card-body">
               <h3 class="fleet-card-title">Boeing 777</h3>
-              <a href="aircraft.html?type=b777" class="btn-dark-pill">View Wallpapers</a>
+              <a href="b777.html" class="btn-dark-pill">View Wallpapers</a>
             </div>
           </article>
         </div>
@@ -110,54 +128,85 @@
     </div>
   </section>
 
-  <!-- ── POPULAR WALLPAPERS ── -->
+  <!-- POPULAR WALLPAPERS — auto-rotating -->
   <section class="wallpapers-section" id="wallpapers">
     <div class="container">
       <h2 class="section-title text-center fade-up">Popular Wallpapers</h2>
+      <p class="text-center fade-up delay-1" style="color:var(--text-grey);margin-top:-24px;margin-bottom:36px;font-size:.88rem">Wallpapers rotate automatically — click any to browse</p>
       <div class="row g-4">
 
+        <!-- Rotator 1: Airbus widebodies -->
         <div class="col-lg-4 col-md-6 fade-up delay-1">
-          <figure class="wp-card">
-            <div class="wp-img-wrap">
-              <img src="assets/images/wp1.jpg" alt="Qatar Airways wallpaper thumbnail 1" width="400" height="190" loading="lazy"
-                onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:190px\'><i class=\'fa fa-image\'></i><span>Wallpaper</span></div>'">
-              <div class="wp-overlay">
-                <a href="download.html?id=1" class="btn-maroon btn-download-sim"><i class="fa fa-download"></i> Download</a>
+          <div class="wp-rotate-card">
+            <div class="wp-rotate-img" id="rot1">
+              <img src="images/a350/Attention Seeker.jpg" alt="A350 wallpaper" class="active">
+              <img src="images/a320/A320 Takeoff.jpg" alt="A320 wallpaper">
+              <img src="images/a380/Sky Surfing.jpg" alt="A380 wallpaper">
+              <div class="wp-rotate-overlay">
+                <a href="a350.html" id="rot1-link" class="btn-maroon"><i class="fa fa-eye"></i> View</a>
+              </div>
+              <div class="wp-rotate-label">
+                <p id="rot1-title">Airbus A350</p>
+                <span>1920×1080</span>
               </div>
             </div>
-            <figcaption class="wp-caption">Wallpaper Thumbnail</figcaption>
-          </figure>
+            <div class="wp-dots" id="dot1">
+              <div class="wp-dot active"></div>
+              <div class="wp-dot"></div>
+              <div class="wp-dot"></div>
+            </div>
+          </div>
         </div>
 
+        <!-- Rotator 2: Boeing aircraft -->
         <div class="col-lg-4 col-md-6 fade-up delay-2">
-          <figure class="wp-card">
-            <div class="wp-img-wrap">
-              <img src="assets/images/wp2.jpg" alt="Qatar Airways wallpaper thumbnail 2" width="400" height="190" loading="lazy"
-                onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:190px\'><i class=\'fa fa-image\'></i><span>Wallpaper</span></div>'">
-              <div class="wp-overlay">
-                <a href="download.html?id=2" class="btn-maroon btn-download-sim"><i class="fa fa-download"></i> Download</a>
+          <div class="wp-rotate-card">
+            <div class="wp-rotate-img" id="rot2">
+              <img src="images/b777/Soaring Over The City.jpg" alt="B777 wallpaper" class="active">
+              <img src="images/b787/Like A Dream.jpg" alt="B787 wallpaper">
+              <img src="images/b737max/Takeoff.webp" alt="737 MAX wallpaper">
+              <div class="wp-rotate-overlay">
+                <a href="b777.html" id="rot2-link" class="btn-maroon"><i class="fa fa-eye"></i> View</a>
+              </div>
+              <div class="wp-rotate-label">
+                <p id="rot2-title">Boeing 777</p>
+                <span>1920×1080</span>
               </div>
             </div>
-            <figcaption class="wp-caption">Wallpaper Thumbnail</figcaption>
-          </figure>
+            <div class="wp-dots" id="dot2">
+              <div class="wp-dot active"></div>
+              <div class="wp-dot"></div>
+              <div class="wp-dot"></div>
+            </div>
+          </div>
         </div>
 
+        <!-- Rotator 3: Mix -->
         <div class="col-lg-4 col-md-6 fade-up delay-3">
-          <figure class="wp-card">
-            <div class="wp-img-wrap">
-              <img src="assets/images/wp3.jpg" alt="Qatar Airways wallpaper thumbnail 3" width="400" height="190" loading="lazy"
-                onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:190px\'><i class=\'fa fa-image\'></i><span>Wallpaper</span></div>'">
-              <div class="wp-overlay">
-                <a href="download.html?id=3" class="btn-maroon btn-download-sim"><i class="fa fa-download"></i> Download</a>
+          <div class="wp-rotate-card">
+            <div class="wp-rotate-img" id="rot3">
+              <img src="images/a330/vintage.jpg" alt="A330 Wallpaper" class="active">
+              <img src="images/b777/Triple Seven Army.jpg" alt="B777 Wallpaper">
+              <img src="images/a350/Beautiful Colours.jpg" alt="A350 Wallpaper">
+              <div class="wp-rotate-overlay">
+                <a href="a330.html" id="rot3-link" class="btn-maroon"><i class="fa fa-eye"></i> View</a>
+              </div>
+              <div class="wp-rotate-label">
+                <p id="rot3-title">Airbus A330</p>
+                <span>1920×1080</span>
               </div>
             </div>
-            <figcaption class="wp-caption">Wallpaper Thumbnail</figcaption>
-          </figure>
+            <div class="wp-dots" id="dot3">
+              <div class="wp-dot active"></div>
+              <div class="wp-dot"></div>
+              <div class="wp-dot"></div>
+            </div>
+          </div>
         </div>
 
       </div>
       <div class="text-center mt-5 fade-up">
-        <a href="fleet.html" class="btn-start-browsing" id="startBrowsingBtn">Start Browsing</a>
+        <a href="fleet gallery.html" class="btn-start-browsing" id="startBrowsingBtn">Start Browsing</a>
       </div>
     </div>
   </section>
@@ -170,7 +219,7 @@
       <address class="footer-copy">&copy; <time datetime="2026">2026</time> Qatar Airways Fleet Wallpapers. All Rights Reserved.</address>
       <nav aria-label="Social media links">
         <div class="footer-socials">
-          <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener noreferrer" class="social-link ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" class="social-link" aria-label="Threads"><i class="fab fa-threads"></i></a>
           <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
@@ -179,6 +228,71 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+/* ── AUTO-ROTATING WALLPAPER CARDS ─────────────────────────
+   3 independent rotators, each cycling through 3 images.
+   CSS opacity transition handles the smooth fade.
+   setInterval advances each one every 3 seconds.
+   They start at different times (offset) so they don't
+   all switch at the same moment.
+   Demonstrates: setInterval, setTimeout, querySelectorAll,
+   classList, array-based data, DOM manipulation
+──────────────────────────────────────────────────────────── */
+var rotators = [
+  {
+    rotId:'rot1', dotId:'dot1', titleId:'rot1-title', linkId:'rot1-link',
+    titles:['Airbus A350','Airbus A320 Family','Airbus A380'],
+    links:['a350.html','a320.html','a380.html'],
+    current:0
+  },
+  {
+    rotId:'rot2', dotId:'dot2', titleId:'rot2-title', linkId:'rot2-link',
+    titles:['Boeing 777','Boeing 787 Dreamliner','Boeing 737 MAX'],
+    links:['b777.html','b787.html','b737max.html'],
+    current:0
+  },
+  {
+    rotId:'rot3', dotId:'dot3', titleId:'rot3-title', linkId:'rot3-link',
+    titles:['Airbus A330','Boeing 777','Airbus A350'],
+    links:['a330.html','b777.html','a350.html'],
+    current:0
+  }
+];
+
+function tick(r) {
+  var container = document.getElementById(r.rotId);
+  var dotBox    = document.getElementById(r.dotId);
+  var titleEl   = document.getElementById(r.titleId);
+  var linkEl    = document.getElementById(r.linkId);
+  if (!container) return;
+
+  var imgs = container.querySelectorAll('img');
+  var dots = dotBox ? dotBox.querySelectorAll('.wp-dot') : [];
+
+  /* Deactivate current */
+  if (imgs[r.current]) imgs[r.current].classList.remove('active');
+  if (dots[r.current]) dots[r.current].classList.remove('active');
+
+  /* Move to next */
+  r.current = (r.current + 1) % imgs.length;
+
+  /* Activate next */
+  if (imgs[r.current]) imgs[r.current].classList.add('active');
+  if (dots[r.current]) dots[r.current].classList.add('active');
+
+  /* Update label and link */
+  if (titleEl) titleEl.textContent = r.titles[r.current];
+  if (linkEl)  linkEl.href = r.links[r.current];
+}
+
+/* Start each rotator with a 1 second offset between them */
+rotators.forEach(function(r, i) {
+  setTimeout(function() {
+    setInterval(function() { tick(r); }, 3000);
+  }, i * 1000);
+});
+</script>
 </body>
 </html>

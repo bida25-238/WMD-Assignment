@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse HD wallpapers for this Qatar Airways aircraft. View, preview and download.">
-  <title>Aircraft Detail — Qatar Airways Fleet Wallpapers</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aircraft Wallpaper Viewer</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Thumbnails are static previews — no pointer/click affordance */
+    #thumbStrip .thumb-item,
+    #thumbGallery .thumb-gallery-item {
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
   <nav class="navbar navbar-expand-lg site-nav" id="mainNav">
     <div class="container-fluid px-4">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.jpeg" alt="Qatar Airways Lovers Community Logo" class="logo-img" onerror="this.style.display='none'">
+        <img src="images/qr lovers logo/QR Lovers Community Logo.jpeg" class="logo-img" alt="">
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="fleet gallery.html">Fleet Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="fleet%20gallery.html">Fleet Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
         </ul>
-        <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener noreferrer" class="ig-btn">
+
+        <a href="https://instagram.com/qatarairwayslovers" class="ig-btn" target="_blank">
           <i class="fab fa-instagram"></i> qatarairwayslovers
         </a>
       </div>
@@ -37,235 +48,86 @@
   </nav>
 </header>
 
-<main>
-
-  <!-- PAGE BANNER -->
-  <div class="page-banner">
-    <div class="container">
-      <h1 class="fade-up" id="pageTitle">Aircraft Detail / Wallpaper Page</h1>
-      <p class="fade-up delay-1">Browse HD wallpapers of the Qatar Airways aircraft below.</p>
-    </div>
+<!-- HERO -->
+<section class="aircraft-hero">
+  <div class="container">
+    <p class="breadcrumb-nav">
+      <a href="index.html">Home</a> <span>›</span>
+      <a href="fleet%20gallery.html">Fleet Gallery</a> <span>›</span>
+      <span id="breadcrumbAircraft">Aircraft</span>
+    </p>
+    <h1 id="pageTitle">Aircraft Wallpapers</h1>
+    <p>Browse HD wallpapers of the Qatar Airways aircraft below.</p>
   </div>
+</section>
 
-  <!-- MAIN WALLPAPER VIEWER -->
-  <section class="aircraft-section" id="viewer">
-    <div class="container">
-      <div class="row g-4">
+<!-- MAIN VIEWER SECTION -->
+<section class="aircraft-section">
+  <div class="container">
+    <div class="row g-4">
 
-        <!-- Left: Main image + thumbnail strip -->
-        <div class="col-lg-7 fade-up">
-
-          <div class="aircraft-main-img" id="mainImgBox">
-            <img id="mainWallpaperImg"
-              src="assets/images/wp1.jpg"
-              alt="Qatar Airways wallpaper large preview"
-              width="700" height="340"
-              loading="eager"
-              onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:340px;width:100%\'><i class=\'fa fa-image\'></i><span>1920×1080</span></div>'">
-          </div>
-
-          <!-- Thumbnail strip — clicking changes main image -->
-          <div class="thumb-strip" id="thumbStrip">
-            <div class="thumb-item active-thumb" onclick="switchMain(this,'assets/images/wp1.jpg')">
-              <img src="assets/images/wp1.jpg" alt="Wallpaper thumbnail 1"
-                onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:62px\'></div>'">
-            </div>
-            <div class="thumb-item" onclick="switchMain(this,'assets/images/wp2.jpg')">
-              <img src="assets/images/wp2.jpg" alt="Wallpaper thumbnail 2"
-                onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:62px\'></div>'">
-            </div>
-            <div class="thumb-item" onclick="switchMain(this,'assets/images/wp3.jpg')">
-              <img src="assets/images/wp3.jpg" alt="Wallpaper thumbnail 3"
-                onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:62px\'></div>'">
-            </div>
-            <div class="thumb-item" onclick="switchMain(this,'assets/images/wp1.jpg')">
-              <img src="assets/images/wp1.jpg" alt="Wallpaper thumbnail 4"
-                onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:62px\'></div>'">
-            </div>
-          </div>
-
+      <!-- LEFT: Main image + thumbnail strip only -->
+      <div class="col-lg-8">
+        <div class="aircraft-main-img">
+          <img id="mainWallpaperImg" src="" alt="Selected wallpaper">
         </div>
 
-        <!-- Right: Wallpaper info panel -->
-        <div class="col-lg-5 fade-up delay-1">
-          <div class="wallpaper-info-panel">
-            <h3 id="wallpaperTitle">Wallpaper Title</h3>
-
-            <div class="info-row">
-              <strong>Aircraft:</strong> <span id="aircraftName">Qatar Airways Aircraft</span>
-            </div>
-            <div class="info-row">
-              <strong>Resolution:</strong> 1920×1080
-            </div>
-            <div class="info-row">
-              <strong>Description:</strong>
-              <span id="aircraftDesc">A high-definition wallpaper featuring this Qatar Airways aircraft in stunning detail, perfect for desktop and mobile use.</span>
-            </div>
-
-            <div class="mt-4">
-              <a href="download.html?id=1" class="btn-maroon w-100 justify-content-center" id="downloadBtn">
-                <i class="fa fa-download"></i> Download Wallpaper
-              </a>
-            </div>
-          </div>
-        </div>
-
+        <!-- 4 THUMBNAIL STRIP -->
+        <div id="thumbStrip" class="thumb-strip"></div>
       </div>
-    </div>
-  </section>
 
-  <hr style="border-color:var(--grey-mid); margin:0;">
+      <!-- RIGHT: All info + download -->
+      <div class="col-lg-4">
+        <div class="wallpaper-info-panel">
+          <h3 id="wallpaperTitle">Wallpaper Title</h3>
 
-  <!-- THUMBNAIL GALLERY -->
-  <section class="aircraft-section" id="thumbnail-gallery">
-    <div class="container">
-      <h2 class="section-title fade-up">Thumbnail Gallery</h2>
-      <div class="thumb-gallery fade-up delay-1">
-        <div class="thumb-gallery-item">
-          <img src="assets/images/wp1.jpg" alt="Gallery thumbnail 1" loading="lazy"
-            onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:90px\'></div>'">
-        </div>
-        <div class="thumb-gallery-item">
-          <img src="assets/images/wp2.jpg" alt="Gallery thumbnail 2" loading="lazy"
-            onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:90px\'></div>'">
-        </div>
-        <div class="thumb-gallery-item">
-          <img src="assets/images/wp3.jpg" alt="Gallery thumbnail 3" loading="lazy"
-            onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:90px\'></div>'">
-        </div>
-        <div class="thumb-gallery-item">
-          <img src="assets/images/wp1.jpg" alt="Gallery thumbnail 4" loading="lazy"
-            onerror="this.parentElement.innerHTML='<div class=\'img-ph\' style=\'height:90px\'></div>'">
+          <div class="info-row"><strong>Aircraft:</strong> <span id="aircraftName">—</span></div>
+          <div class="info-row"><strong>Resolution:</strong> <span id="wallpaperRes">—</span></div>
+          <div class="info-row"><strong>Description:</strong> <span id="wallpaperDesc">—</span></div>
+
+          <hr>
+
+          <!-- PRIMARY DOWNLOAD BUTTON -->
+          <a id="downloadBtn" href="download.html" class="btn-dark-pill w-100 d-block text-center mb-3">
+            <i class="fa fa-download"></i> Download Wallpaper
+          </a>
+
+
         </div>
       </div>
-    </div>
-  </section>
 
-  <hr style="border-color:var(--grey-mid); margin:0;">
+    </div><!-- /row -->
 
-  <!-- MORE WALLPAPERS OF THIS AIRCRAFT -->
-  <section class="aircraft-section" id="more-wallpapers">
-    <div class="container">
-      <h2 class="section-title fade-up">More Wallpapers Of This Aircraft</h2>
-      <div class="row g-4">
+    <!-- THUMBNAIL GALLERY — below both columns -->
+    <h4 class="mt-5 mb-3">Thumbnail Gallery</h4>
+    <div id="thumbGallery" class="thumb-gallery"></div>
 
-        <div class="col-lg-4 col-md-6 fade-up delay-1">
-          <article class="more-wallpaper-card">
-            <div class="more-wp-img">
-              <img src="assets/images/wp2.jpg" alt="Additional wallpaper 1" loading="lazy"
-                onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:140px\'><i class=\'fa fa-image\'></i></div>'">
-            </div>
-            <div class="more-wp-body">
-              <p class="more-wp-title">Wallpaper Title</p>
-              <p class="more-wp-sub" id="moreAircraft1">Aircraft</p>
-              <div class="mt-2">
-                <a href="download.html?id=2" class="btn-dark-pill" style="font-size:0.78rem; padding:8px 18px;">Download</a>
-              </div>
-            </div>
-          </article>
-        </div>
+    <!-- MORE WALLPAPERS — below gallery -->
+    <h4 class="mt-5 mb-3">More Of Wallpapers Of This Aircraft</h4>
+    <div id="moreWallpapersGrid" class="row g-3"></div>
 
-        <div class="col-lg-4 col-md-6 fade-up delay-2">
-          <article class="more-wallpaper-card">
-            <div class="more-wp-img">
-              <img src="assets/images/wp3.jpg" alt="Additional wallpaper 2" loading="lazy"
-                onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:140px\'><i class=\'fa fa-image\'></i></div>'">
-            </div>
-            <div class="more-wp-body">
-              <p class="more-wp-title">Wallpaper Title</p>
-              <p class="more-wp-sub" id="moreAircraft2">Aircraft</p>
-              <div class="mt-2">
-                <a href="download.html?id=3" class="btn-dark-pill" style="font-size:0.78rem; padding:8px 18px;">Download</a>
-              </div>
-            </div>
-          </article>
-        </div>
+  </div>
+</section>
 
-        <div class="col-lg-4 col-md-6 fade-up delay-3">
-          <article class="more-wallpaper-card">
-            <div class="more-wp-img">
-              <img src="assets/images/wp1.jpg" alt="Additional wallpaper 3" loading="lazy"
-                onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:140px\'><i class=\'fa fa-image\'></i></div>'">
-            </div>
-            <div class="more-wp-body">
-              <p class="more-wp-title">Wallpaper Title</p>
-              <p class="more-wp-sub" id="moreAircraft3">Aircraft</p>
-              <div class="mt-2">
-                <a href="download.html?id=4" class="btn-dark-pill" style="font-size:0.78rem; padding:8px 18px;">Download</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</main>
+<!-- TOASTS -->
+<div id="downloadToast" class="toast-msg"></div>
+<div id="feedbackToast" class="toast-msg"></div>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
-      <address class="footer-copy">&copy; <time datetime="2026">2026</time> Qatar Airways Fleet Wallpapers. All Rights Reserved.</address>
-      <nav aria-label="Social media links">
-        <div class="footer-socials">
-          <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener" class="social-link ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link" aria-label="Threads"><i class="fab fa-threads"></i></a>
-          <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        </div>
-      </nav>
+      <address class="footer-copy">&copy; 2026 Qatar Airways Fleet Wallpapers. All Rights Reserved.</address>
+      <div class="footer-socials">
+        <a class="social-link"><i class="fab fa-instagram"></i></a>
+        <a class="social-link"><i class="fab fa-threads"></i></a>
+        <a class="social-link"><i class="fab fa-tiktok"></i></a>
+      </div>
     </div>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
-<script>
-  /* ── AIRCRAFT PAGE: Dynamic content from URL query string ──
-     Reads ?type=a350 from the URL and updates page text.
-     Demonstrates: URLSearchParams, getElementById, textContent
-  ────────────────────────────────────────────────────────── */
-  var aircraftData = {
-    a320:   { name: 'Airbus A320 Family',  title: 'A320 Family Wallpaper',   desc: 'The backbone of Qatar Airways short to medium-haul network, featuring the A319, A320neo and A321neo.' },
-    a330:   { name: 'Airbus A330',         title: 'A330 Wallpaper',          desc: 'Qatar Airways Airbus A330 series, serving a wide range of medium to long-haul international routes.' },
-    a350:   { name: 'Airbus A350',         title: 'A350 Wallpaper',          desc: 'The flagship long-haul widebody of the fleet, celebrated for its carbon-fibre fuselage and iconic Qsuite.' },
-    a380:   { name: 'Airbus A380',         title: 'A380 Wallpaper',          desc: 'The world\'s largest passenger aircraft, previously operated by Qatar Airways on key international routes.' },
-    b737max:{ name: 'Boeing 737 MAX',      title: '737 MAX Wallpaper',       desc: 'The modern narrow-body aircraft joining the Qatar Airways short to medium-haul fleet.' },
-    b777:   { name: 'Boeing 777',          title: 'Boeing 777 Wallpaper',    desc: 'The iconic twin-engine widebody powering Qatar Airways ultra long-haul routes across six continents.' },
-    b787:   { name: 'Boeing 787 Dreamliner', title: '787 Dreamliner Wallpaper', desc: 'The fuel-efficient widebody Dreamliner, known for its large windows and improved passenger comfort.' },
-  };
 
-  var params = new URLSearchParams(window.location.search);
-  var type   = params.get('type') || 'a350';
-  var data   = aircraftData[type] || aircraftData['a350'];
-
-  // Update page text dynamically
-  document.getElementById('pageTitle').textContent    = 'Aircraft Detail / Wallpaper Page';
-  document.getElementById('wallpaperTitle').textContent = data.title;
-  document.getElementById('aircraftName').textContent  = data.name;
-  document.getElementById('aircraftDesc').textContent  = data.desc;
-  document.getElementById('moreAircraft1').textContent = data.name;
-  document.getElementById('moreAircraft2').textContent = data.name;
-  document.getElementById('moreAircraft3').textContent = data.name;
-  document.title = data.name + ' — Qatar Airways Fleet Wallpapers';
-
-  /* ── THUMBNAIL STRIP: switch main image on click ── */
-  function switchMain(thumb, src) {
-    // Remove active border from all thumbs
-    document.querySelectorAll('.thumb-item').forEach(function(t) {
-      t.style.borderColor = '';
-    });
-    // Highlight clicked thumb
-    thumb.style.borderColor = 'var(--maroon)';
-
-    // Update main image
-    var mainImg = document.getElementById('mainWallpaperImg');
-    if (mainImg) {
-      mainImg.style.opacity = '0.4';
-      mainImg.src = src;
-      mainImg.onload = function() { mainImg.style.opacity = '1'; };
-      mainImg.style.transition = 'opacity 0.3s ease';
-    }
-  }
-</script>
 </body>
 </html>

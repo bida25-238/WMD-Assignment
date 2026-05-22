@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse HD wallpapers of the Qatar Airways Boeing 787 Dreamliner. Download free aviation wallpapers.">
+  <title>Boeing 787 Dreamliner Wallpapers — Qatar Airways Fleet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Aircraft wallpaper gallery card */
+    .wp-gallery-card {
+      border: 1px solid var(--mid-grey);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      height: 100%;
+      transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr);
+    }
+    .wp-gallery-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+    .wp-gallery-img {
+      position: relative;
+      overflow: hidden;
+      height: 220px;
+      background: var(--light-grey);
+    }
+    .wp-gallery-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .wp-gallery-card:hover .wp-gallery-img img { transform: scale(1.07); }
+    .wp-gallery-overlay {
+      position: absolute; inset: 0;
+      background: rgba(26,5,8,0.78);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity var(--tr);
+    }
+    .wp-gallery-card:hover .wp-gallery-overlay { opacity: 1; }
+    .wp-gallery-body { padding: 18px; border-top: 3px solid var(--gold); }
+    .wp-gallery-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); }
+    .wp-gallery-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--text-grey); margin-bottom: 4px; }
+    .wp-gallery-res i { margin-right: 4px; color: var(--maroon); }
+    .wp-gallery-maker { background: var(--light-grey); padding: 2px 9px; border-radius: 20px; font-size: 0.72rem; font-weight: 500; }
+
+    /* Hero banner for aircraft page */
+    .aircraft-hero {
+      background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 100%);
+      padding: 56px 0 42px;
+      position: relative;
+      overflow: hidden;
+    }
+    .aircraft-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light), var(--gold));
+    }
+    .aircraft-hero h1 { font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .aircraft-hero .aircraft-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 10px; }
+    .aircraft-hero .meta-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      font-size: 0.78rem; font-weight: 500;
+      padding: 4px 14px; border-radius: 50px;
+    }
+    .aircraft-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.65); max-width: 600px; margin-top: 10px; }
+    .breadcrumb-nav { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+    .breadcrumb-nav a { color: var(--gold); transition: opacity 0.2s; }
+    .breadcrumb-nav a:hover { opacity: 0.8; }
+    .breadcrumb-nav span { margin: 0 6px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg site-nav" id="mainNav">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/qr lovers logo/QR Lovers Community Logo.jpeg" alt="Qatar Airways Lovers Logo" class="logo-img" onerror="this.style.display='none'">
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="fleet gallery.html">Fleet Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+        </ul>
+        <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener noreferrer" class="ig-btn">
+          <i class="fab fa-instagram"></i> qatarairwayslovers
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- AIRCRAFT HERO BANNER -->
+  <div class="aircraft-hero">
+    <div class="container">
+      <p class="breadcrumb-nav">
+        <a href="index.html">Home</a><span>›</span>
+        <a href="fleet gallery.html">Fleet Gallery</a><span>›</span>
+        Boeing 787 Dreamliner
+      </p>
+      <h1>Boeing 787 Dreamliner Wallpapers</h1>
+      <p>The fuel-efficient Dreamliner known for large windows, lower cabin altitude and improved passenger comfort.</p>
+      <div class="aircraft-meta">
+        <span class="meta-badge"><i class="fa fa-plane"></i> Boeing</span>
+        <span class="meta-badge"><i class="fa fa-images"></i> 6 Wallpapers</span>
+        <span class="meta-badge"><i class="fa fa-expand"></i> 1920×1080</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WALLPAPER GRID -->
+  <section style="padding: 70px 0;" id="wallpaper-grid">
+    <div class="container">
+      <h2 class="section-title fade-up">Browse Boeing 787 Wallpapers</h2>
+      <div class="row g-4">
+        
+        <div class="col-lg-4 col-md-6 fade-up">
+          <article class="wp-gallery-card">
+            <div class="wp-gallery-img">
+              <img src="images/b787/In The Mountains.jpg"
+                alt="Boeing 787 Dreamliner — In The Mountains"
+                loading="lazy"
+                onerror="this.outerHTML='<div class='img-ph' style='height:220px'><i class='fa fa-image'></i><span>Boeing 787</span></div>'">
+              <div class="wp-gallery-overlay">
+                <a href="aircraft.html?type=b787&variant=1" class="btn-maroon">
+                  <i class="fa fa-eye"></i> View Wallpaper
+                </a>
+              </div>
+            </div>
+            <div class="wp-gallery-body">
+              <h3 class="wp-gallery-title">Boeing 787 Dreamliner — In The Mountains</h3>
+              <p class="wp-gallery-meta">
+                <span class="wp-gallery-res"><i class="fa fa-expand"></i> 1920×1080</span>
+                <span class="wp-gallery-maker">Boeing</span>
+              </p>
+              <a href="aircraft.html?type=b787&variant=1" class="btn-dark-pill mt-2 d-inline-block">
+                View Wallpaper
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 fade-up delay-1">
+          <article class="wp-gallery-card">
+            <div class="wp-gallery-img">
+              <img src="images/b787/Look Above You.jpeg"
+                alt="Boeing 787 Dreamliner — Look Above You"
+                loading="lazy"
+                onerror="this.outerHTML='<div class='img-ph' style='height:220px'><i class='fa fa-image'></i><span>Boeing 787</span></div>'">
+              <div class="wp-gallery-overlay">
+                <a href="aircraft.html?type=b787&variant=2" class="btn-maroon">
+                  <i class="fa fa-eye"></i> View Wallpaper
+                </a>
+              </div>
+            </div>
+            <div class="wp-gallery-body">
+              <h3 class="wp-gallery-title">Boeing 787 Dreamliner — Look Above You</h3>
+              <p class="wp-gallery-meta">
+                <span class="wp-gallery-res"><i class="fa fa-expand"></i> 1920×1080</span>
+                <span class="wp-gallery-maker">Boeing</span>
+              </p>
+              <a href="aircraft.html?type=b787&variant=2" class="btn-dark-pill mt-2 d-inline-block">
+                View Wallpaper
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 fade-up delay-2">
+          <article class="wp-gallery-card">
+            <div class="wp-gallery-img">
+              <img src="images/b787/Touchdown.jpeg"
+                alt="Boeing 787 Dreamliner — Landing Edition"
+                loading="lazy"
+                onerror="this.outerHTML='<div class='img-ph' style='height:220px'><i class='fa fa-image'></i><span>Boeing 787</span></div>'">
+              <div class="wp-gallery-overlay">
+                <a href="aircraft.html?type=b787&variant=3" class="btn-maroon">
+                  <i class="fa fa-eye"></i> View Wallpaper
+                </a>
+              </div>
+            </div>
+            <div class="wp-gallery-body">
+              <h3 class="wp-gallery-title">Boeing 787 Dreamliner — Landing Edition</h3>
+              <p class="wp-gallery-meta">
+                <span class="wp-gallery-res"><i class="fa fa-expand"></i> 1920×1080</span>
+                <span class="wp-gallery-maker">Boeing</span>
+              </p>
+              <a href="aircraft.html?type=b787&variant=3" class="btn-dark-pill mt-2 d-inline-block">
+                View Wallpaper
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 fade-up delay-1">
+          <article class="wp-gallery-card">
+            <div class="wp-gallery-img">
+              <img src="images/b787/Like A Dream.jpg"
+                alt="Boeing 787 Dreamliner — Like A Dream"
+                loading="lazy"
+                onerror="this.outerHTML='<div class='img-ph' style='height:220px'><i class='fa fa-image'></i><span>Boeing 787</span></div>'">
+              <div class="wp-gallery-overlay">
+                <a href="aircraft.html?type=b787&variant=4" class="btn-maroon">
+                  <i class="fa fa-eye"></i> View Wallpaper
+                </a>
+              </div>
+            </div>
+            <div class="wp-gallery-body">
+              <h3 class="wp-gallery-title">Boeing 787 Dreamliner — Like A Dream</h3>
+              <p class="wp-gallery-meta">
+                <span class="wp-gallery-res"><i class="fa fa-expand"></i> 1920×1080</span>
+                <span class="wp-gallery-maker">Boeing</span>
+              </p>
+              <a href="aircraft.html?type=b787&variant=4" class="btn-dark-pill mt-2 d-inline-block">
+                View Wallpaper
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 fade-up delay-2">
+          <article class="wp-gallery-card">
+            <div class="wp-gallery-img">
+              <img src="images/b787/On Final.jpg"
+                alt="Boeing 787 Dreamliner — On Final"
+                loading="lazy"
+                onerror="this.outerHTML='<div class='img-ph' style='height:220px'><i class='fa fa-image'></i><span>Boeing 787</span></div>'">
+              <div class="wp-gallery-overlay">
+                <a href="aircraft.html?type=b787&variant=5" class="btn-maroon">
+                  <i class="fa fa-eye"></i> View Wallpaper
+                </a>
+              </div>
+            </div>
+            <div class="wp-gallery-body">
+              <h3 class="wp-gallery-title">Boeing 787 Dreamliner — On Final</h3>
+              <p class="wp-gallery-meta">
+                <span class="wp-gallery-res"><i class="fa fa-expand"></i> 1920×1080</span>
+                <span class="wp-gallery-maker">Boeing</span>
+              </p>
+              <a href="aircraft.html?type=b787&variant=5" class="btn-dark-pill mt-2 d-inline-block">
+                View Wallpaper
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 fade-up delay-3">
+          <article class="wp-gallery-card">
+            <div class="wp-gallery-img">
+              <img src="images/b787/Soaring Over The Clouds.jpg"
+                alt="Boeing 787 Dreamliner — Soaring Over The Clouds"
+                loading="lazy"
+                onerror="this.outerHTML='<div class='img-ph' style='height:220px'><i class='fa fa-image'></i><span>Boeing 787</span></div>'">
+              <div class="wp-gallery-overlay">
+                <a href="aircraft.html?type=b787&variant=6" class="btn-maroon">
+                  <i class="fa fa-eye"></i> View Wallpaper
+                </a>
+              </div>
+            </div>
+            <div class="wp-gallery-body">
+              <h3 class="wp-gallery-title">Boeing 787 Dreamliner — Soaring Over The Clouds</h3>
+              <p class="wp-gallery-meta">
+                <span class="wp-gallery-res"><i class="fa fa-expand"></i> 1920×1080</span>
+                <span class="wp-gallery-maker">Boeing</span>
+              </p>
+              <a href="aircraft.html?type=b787&variant=6" class="btn-dark-pill mt-2 d-inline-block">
+                View Wallpaper
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK TO FLEET -->
+  <section style="padding: 0 0 70px; text-align:center;">
+    <div class="container fade-up">
+      <a href="fleet gallery.html" class="btn-outline-pill">
+        <i class="fa fa-arrow-left" style="margin-right:8px"></i> Back to Fleet Gallery
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <address class="footer-copy">&copy; <time datetime="2026">2026</time> Qatar Airways Fleet Wallpapers. All Rights Reserved.</address>
+      <nav aria-label="Social media links">
+        <div class="footer-socials">
+          <a href="https://instagram.com/qatarairwayslovers" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Threads"><i class="fab fa-threads"></i></a>
+          <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

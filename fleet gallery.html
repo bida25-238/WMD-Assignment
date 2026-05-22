@@ -8,6 +8,21 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .explore-card .explore-sub {
+      font-size: 0.78rem;
+      color: #888;
+      margin: 4px 0 12px;
+    }
+    .explore-card.active {
+      border-color: var(--gold, #c9a84c);
+      box-shadow: 0 0 0 2px rgba(201,168,76,0.25);
+    }
+    .explore-card.active .explore-browse-btn {
+      background: var(--gold, #c9a84c);
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -15,7 +30,7 @@
   <nav class="navbar navbar-expand-lg site-nav" id="mainNav">
     <div class="container-fluid px-4">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.jpeg" alt="Qatar Airways Lovers Logo" class="logo-img" onerror="this.style.display='none'">
+        <img src="images/qr lovers logo/QR Lovers Community Logo.jpeg" alt="Qatar Airways Lovers Logo" class="logo-img" onerror="this.style.display='none'">
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,50 +79,50 @@
       <div class="row g-4" id="aircraftGrid">
 
         <div class="col-lg-3 col-md-4 col-6 fade-up">
-          <a href="aircraft.html?type=a320" class="aircraft-cat-card d-block" data-name="A320 Family" data-maker="airbus">
-            <div class="aircraft-cat-img"><img src="assets/images/a320.jpg" alt="A320 Family" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+          <a href="a320.html" class="aircraft-cat-card d-block" data-name="A320 Family" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="images/a320/a320 cover.webp" alt="A320 Family" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
             <span class="aircraft-cat-label">A320 Family</span>
           </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-6 fade-up delay-1">
-          <a href="aircraft.html?type=a330" class="aircraft-cat-card d-block" data-name="Airbus A330" data-maker="airbus">
-            <div class="aircraft-cat-img"><img src="assets/images/a330.jpg" alt="Airbus A330" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+          <a href="a330.html" class="aircraft-cat-card d-block" data-name="Airbus A330" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="images/a330/a330 cover.jpg" alt="Airbus A330" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
             <span class="aircraft-cat-label">Airbus A330</span>
           </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-6 fade-up delay-2">
-          <a href="aircraft.html?type=a350" class="aircraft-cat-card d-block" data-name="Airbus A350" data-maker="airbus">
-            <div class="aircraft-cat-img"><img src="assets/images/a350.jpg" alt="Airbus A350" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+          <a href="a350.html" class="aircraft-cat-card d-block" data-name="Airbus A350" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="images/a350/a350 cover.webp" alt="Airbus A350" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
             <span class="aircraft-cat-label">Airbus A350</span>
           </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-6 fade-up delay-3">
-          <a href="aircraft.html?type=a380" class="aircraft-cat-card d-block" data-name="Airbus A380" data-maker="airbus">
-            <div class="aircraft-cat-img"><img src="assets/images/a380.jpg" alt="Airbus A380" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+          <a href="a380.html" class="aircraft-cat-card d-block" data-name="Airbus A380" data-maker="airbus">
+            <div class="aircraft-cat-img"><img src="images/a380/a380 cover.jpg" alt="Airbus A380" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
             <span class="aircraft-cat-label">Airbus A380</span>
           </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-6 fade-up">
-          <a href="aircraft.html?type=b737max" class="aircraft-cat-card d-block" data-name="Boeing 737 MAX" data-maker="boeing">
-            <div class="aircraft-cat-img"><img src="assets/images/b737max.jpg" alt="Boeing 737 MAX" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+          <a href="b737max.html" class="aircraft-cat-card d-block" data-name="Boeing 737 MAX" data-maker="boeing">
+            <div class="aircraft-cat-img"><img src="images/b737max/737 cover.webp" alt="Boeing 737 MAX" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
             <span class="aircraft-cat-label">Boeing 737 MAX</span>
           </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-6 fade-up delay-1">
-          <a href="aircraft.html?type=b777" class="aircraft-cat-card d-block" data-name="Boeing 777" data-maker="boeing">
-            <div class="aircraft-cat-img"><img src="assets/images/b777.jpg" alt="Boeing 777" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+          <a href="b777.html" class="aircraft-cat-card d-block" data-name="Boeing 777" data-maker="boeing">
+            <div class="aircraft-cat-img"><img src="images/b777/777 cover.avif" alt="Boeing 777" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
             <span class="aircraft-cat-label">Boeing 777</span>
           </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-6 fade-up delay-2">
-          <a href="aircraft.html?type=b787" class="aircraft-cat-card d-block" data-name="Boeing 787" data-maker="boeing">
-            <div class="aircraft-cat-img"><img src="assets/images/b787.jpg" alt="Boeing 787" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
+          <a href="b787.html" class="aircraft-cat-card d-block" data-name="Boeing 787" data-maker="boeing">
+            <div class="aircraft-cat-img"><img src="images/b787/787 cover.jpg" alt="Boeing 787" loading="lazy" onerror="this.outerHTML='<div class=\'img-ph\' style=\'height:160px\'><i class=\'fa fa-plane\'></i></div>'"></div>
             <span class="aircraft-cat-label">Boeing 787</span>
           </a>
         </div>
@@ -118,20 +133,26 @@
 
   <section class="gallery-section" style="padding-top:0">
     <div class="container">
-      <h2 class="section-title text-center fade-up">Explore More Aircraft</h2>
+      <h2 class="section-title text-center fade-up">Explore By Manufacturer</h2>
       <div class="row g-4 justify-content-center">
         <div class="col-lg-5 col-md-6 fade-up delay-1">
-          <div class="explore-card">
+          <div class="explore-card" id="exploreAirbus">
             <p class="explore-label fw-semibold">Airbus Collection</p>
             <div class="explore-card-img"><i class="fa fa-plane"></i></div>
-            <button class="explore-browse-btn" onclick="location.href='fleet.html?filter=airbus'">Browse Airbus</button>
+            <p class="explore-sub">A320 Family · A330 · A350 · A380</p>
+            <button class="explore-browse-btn" onclick="applyManufacturerFilter('airbus')">
+              <i class="fa fa-filter" style="margin-right:6px"></i>Show Airbus Only
+            </button>
           </div>
         </div>
         <div class="col-lg-5 col-md-6 fade-up delay-2">
-          <div class="explore-card">
+          <div class="explore-card" id="exploreBoeing">
             <p class="explore-label fw-semibold">Boeing Collection</p>
             <div class="explore-card-img"><i class="fa fa-plane"></i></div>
-            <button class="explore-browse-btn" onclick="location.href='fleet.html?filter=boeing'">Browse Boeing</button>
+            <p class="explore-sub">737 MAX · 777 · 787 Dreamliner</p>
+            <button class="explore-browse-btn" onclick="applyManufacturerFilter('boeing')">
+              <i class="fa fa-filter" style="margin-right:6px"></i>Show Boeing Only
+            </button>
           </div>
         </div>
       </div>
@@ -155,7 +176,60 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+(function () {
+  var searchInput  = document.getElementById('searchInput');
+  var filterSelect = document.getElementById('filterSelect');
+  var grid         = document.getElementById('aircraftGrid');
+
+  /* Inject a no-results message row */
+  var noResults = document.createElement('div');
+  noResults.id = 'noResults';
+  noResults.style.cssText = 'display:none;width:100%;text-align:center;padding:48px 0;color:#888;font-size:1rem;';
+  noResults.innerHTML = '<i class="fa fa-search" style="font-size:2rem;margin-bottom:12px;display:block;opacity:0.35"></i>No aircraft match your search.';
+  grid.after(noResults);
+
+  function filterGrid() {
+    var query  = (searchInput.value || '').toLowerCase().trim();
+    var maker  = filterSelect.value; /* 'all' | 'airbus' | 'boeing' */
+    var cards  = grid.querySelectorAll('[data-name]');
+    var visible = 0;
+
+    cards.forEach(function (card) {
+      var col       = card.closest('.col-lg-3, .col-md-4, .col-6') || card.parentElement;
+      var nameMatch = card.dataset.name.toLowerCase().includes(query);
+      var makerMatch = (maker === 'all') || (card.dataset.maker === maker);
+
+      if (nameMatch && makerMatch) {
+        col.style.display = '';
+        visible++;
+      } else {
+        col.style.display = 'none';
+      }
+    });
+
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+
+    /* Highlight active explore card */
+    document.getElementById('exploreAirbus').classList.toggle('active', maker === 'airbus');
+    document.getElementById('exploreBoeing').classList.toggle('active', maker === 'boeing');
+  }
+
+  /* Wire up controls */
+  searchInput.addEventListener('input', filterGrid);
+  filterSelect.addEventListener('change', filterGrid);
+
+  /* Called by the explore-section buttons */
+  window.applyManufacturerFilter = function (maker) {
+    /* Toggle off if already active */
+    filterSelect.value = (filterSelect.value === maker) ? 'all' : maker;
+    searchInput.value  = '';
+    filterGrid();
+    /* Smooth-scroll back up to the grid */
+    document.getElementById('fleet-cats').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+})();
+</script>
 </body>
 </html>
